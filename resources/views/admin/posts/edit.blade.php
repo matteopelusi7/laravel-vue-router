@@ -3,8 +3,21 @@
 @section('content')
 
     <div class="container">
+        <div class="row">
+            <div class="col-10">
+                <h1>Modifica Post: {{ $post->title }}</h1>
+            </div>
+            <div class="col-2">
+                <form action="{{ route('admin.posts.destroy', $post) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger" type="submit">Elimina</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-        <h1>Modifica Post: {{ $post->title }}</h1>
+    <div class="container">
 
         <form action="{{ route('admin.posts.update', $post) }}" method="POST">
             @csrf
