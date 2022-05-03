@@ -4,6 +4,8 @@
 
     <div class="container">
 
+        <h1>Crea nuovo Post</h1>
+
         <form action="{{ route('admin.posts.store') }}" method="POST">
             @csrf
 
