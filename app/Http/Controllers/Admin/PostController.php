@@ -107,7 +107,7 @@ class PostController extends Controller
 
         }
 
-        $data['slug'] = $slug;
+        $post['slug'] = $slug;
 
         $post->update( $data );
 
