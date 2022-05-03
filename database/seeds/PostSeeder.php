@@ -3,6 +3,7 @@
 use App\Post;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 class PostSeeder extends Seeder
 {
