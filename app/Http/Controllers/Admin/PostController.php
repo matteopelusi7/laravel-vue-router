@@ -104,10 +104,8 @@ class PostController extends Controller
         if( $post->title != $data['title'] ) {
 
             $slug = Post::getUniqueSlug( $data['title']);
-
+            $data['slug'] = $slug;
         }
-
-        $post['slug'] = $slug;
 
         $post->update( $data );
 
