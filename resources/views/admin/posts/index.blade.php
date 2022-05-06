@@ -35,7 +35,7 @@
                             @endforeach
                         </td>
                         <td>{{ $post->published_at }}</td>
-                        <td>{{ $post->created_at }}</td>
+                        <td>{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $post->created_at)->format('d/m/Y') }}</td>
                         <td>
                             <a class="btn btn-small btn-warning" href="{{ route('admin.posts.edit', $post) }}">Modifica</a>
                         </td>
