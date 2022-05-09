@@ -1992,6 +1992,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2000,16 +2005,28 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      posts: []
+      posts: [],
+      lastPage: 0,
+      currentPage: 1
     };
   },
   methods: {
     fetchPosts: function fetchPosts() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/posts').then(function (res) {
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/posts', {
+        params: {
+          page: page
+        }
+      }).then(function (res) {
         var posts = res.data.posts;
-        _this.posts = posts;
+        var data = posts.data,
+            last_page = posts.last_page,
+            current_page = posts.current_page;
+        _this.posts = data;
+        _this.currentPage = current_page;
+        _this.lastPage = last_page;
       })["catch"](function (err) {
         console.warn(err);
       });
@@ -3266,7 +3283,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "py-12" }, [
     _vm._m(0),
     _vm._v(" "),
     _c(
@@ -3280,6 +3297,32 @@ var render = function () {
       }),
       1
     ),
+    _vm._v(" "),
+    _c("div", { staticClass: "container py-4" }, [
+      _c(
+        "ul",
+        { staticClass: "pagination flex justify-center gap-4 item-center" },
+        _vm._l(_vm.lastPage, function (n) {
+          return _c(
+            "li",
+            {
+              key: n,
+              class: [
+                _vm.currentPage === n ? "bg-orange-400" : "bg-white-400",
+                "dot bg-white/30 rounded-full cursor-pointer h-10 w-10 flex items-center justify-center text-sm",
+              ],
+              on: {
+                click: function ($event) {
+                  return _vm.fetchPosts(n)
+                },
+              },
+            },
+            [_vm._v(_vm._s(n))]
+          )
+        }),
+        0
+      ),
+    ]),
   ])
 }
 var staticRenderFns = [
