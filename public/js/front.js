@@ -1960,6 +1960,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3234,13 +3236,7 @@ var render = function () {
   return _c(
     "div",
     { staticClass: "app bg-zinc-800 text-white" },
-    [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("PostsGrid"),
-      _vm._v(" "),
-      _c("footer", [_vm._v("\n       © Boolpress 2022\n   ")]),
-    ],
+    [_vm._m(0), _vm._v(" "), _c("PostsGrid"), _vm._v(" "), _vm._m(1)],
     1
   )
 }
@@ -3249,15 +3245,25 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("header", [
+    return _c("header", { staticClass: "flex justify-center py-5" }, [
       _c("nav", [
-        _c("ul", [
+        _c("ul", { staticClass: "flex gap-7 cursor-pointer" }, [
           _c("li", [_vm._v("Home")]),
           _vm._v(" "),
           _c("li", [_vm._v("Posts")]),
           _vm._v(" "),
           _c("li", [_vm._v("Categories")]),
         ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("footer", { staticClass: "py-7" }, [
+      _c("div", { staticClass: "container flex justify-end" }, [
+        _vm._v("\n           © Boolpress 2022\n       "),
       ]),
     ])
   },
@@ -3290,7 +3296,7 @@ var render = function () {
       "div",
       {
         staticClass:
-          "container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8",
+          "container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pb-7",
       },
       _vm._l(_vm.posts, function (post) {
         return _c("PostCard", { key: post.id, attrs: { post: post } })
@@ -3330,7 +3336,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
+    return _c("div", { staticClass: "container pb-5" }, [
       _c("h1", [_vm._v("Ultimi post")]),
     ])
   },

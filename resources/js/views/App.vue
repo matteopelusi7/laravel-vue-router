@@ -1,8 +1,8 @@
 <template>
     <div class="app bg-zinc-800 text-white">
-       <header>
+       <header class="flex justify-center py-5">
            <nav>
-               <ul>
+               <ul class="flex gap-7 cursor-pointer">
                    <li>Home</li>
                    <li>Posts</li>
                    <li>Categories</li>
@@ -10,8 +10,10 @@
            </nav>
        </header>
        <PostsGrid />
-       <footer>
-           &copy; Boolpress 2022
+       <footer class="py-7">
+           <div class="container flex justify-end">
+               &copy; Boolpress 2022
+           </div>
        </footer>
     </div>
 </template>

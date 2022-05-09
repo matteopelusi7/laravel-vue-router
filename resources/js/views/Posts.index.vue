@@ -1,9 +1,9 @@
 <template>
     <div class="py-12">
-        <div class="container">
+        <div class="container pb-5">
             <h1>Ultimi post</h1>
         </div>
-        <div class="container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div class="container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pb-7">
             <PostCard v-for="post in posts" :key="post.id" :post="post"/>
         </div>
         <div class="container py-4">
