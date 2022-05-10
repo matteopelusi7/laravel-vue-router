@@ -49942,9 +49942,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetti-laravel\laravel-many-to-many\resources\js\admin.js */"./resources/js/admin.js");
-__webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetti-laravel\laravel-many-to-many\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetti-laravel\laravel-many-to-many\resources\sass\front.scss */"./resources/sass/front.scss");
+__webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetti-laravel\laravel-api\resources\js\admin.js */"./resources/js/admin.js");
+__webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetti-laravel\laravel-api\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\Matteo\Desktop\Boolean\Progetti-laravel\laravel-api\resources\sass\front.scss */"./resources/sass/front.scss");
 
 
 /***/ })
