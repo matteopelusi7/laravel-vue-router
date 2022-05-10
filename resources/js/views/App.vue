@@ -4,7 +4,9 @@
            <nav>
                <ul class="flex gap-7 cursor-pointer">
                    <li>Home</li>
-                   <li>Posts</li>
+                   <li>
+                       <router-link :to="{ name: 'posts.index' }">Posts</router-link>
+                    </li>
                    <li>Categories</li>
                </ul>
            </nav>
