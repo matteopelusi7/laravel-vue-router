@@ -5,6 +5,7 @@ Vue.use(VueRouter)
 
 import Posts from '../pages/Posts.index.vue'
 import Post from '../pages/Posts.show.vue'
+import NotFound from '../pages/404.vue'
 
 const routes = [
     {
@@ -16,6 +17,10 @@ const routes = [
         path: '/posts/:slug',
         name: 'posts.show',
         component: Post
+    },
+    {
+        path: '/*',
+        component: NotFound
     }
 ]
 
