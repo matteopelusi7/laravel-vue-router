@@ -6,7 +6,7 @@
 
         <h1>Crea nuovo Post</h1>
 
-        <form action="{{ route('admin.posts.store') }}" method="POST">
+        <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">
@@ -15,6 +15,14 @@
               @error('title')
                   <div class="invalid-feedback">{{ $message }}</div>
               @enderror
+            </div>
+
+            <div class="form-group">
+                <input class="@error('cover') is-invalid @enderror" type="file" accept=".jpg,.png" name="cover" id="cover">
+                <label for="cover">Carica immagine di copertina</label>
+                @error('cover')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">

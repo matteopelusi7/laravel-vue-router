@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\SendPostDeletedMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
@@ -50,10 +51,16 @@ class PostController extends Controller
             'title' => 'required|string|max:150',
             'content' => 'required|string',
             'published_at' => 'nullable|date|before_or_equal:today',
-            'category_id' => 'nullable|exists:categories,id'
+            'category_id' => 'nullable|exists:categories,id',
+            'cover' => 'nullable|file|image|mimetypes:image/jpeg,image/png|max:2048'
         ]);
 
         $data = $request->all();
+
+        if(array_key_exists('cover',$data)) {
+            $cover_path = Storage::put('uploads', $data['cover']);
+            $data['cover'] = $cover_path;
+        }
 
         $slug = Post::getUniqueSlug( $data['title']);
 
